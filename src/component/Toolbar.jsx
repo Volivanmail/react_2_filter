@@ -1,7 +1,6 @@
 import React from "react";
 
-export default function Toolbar(props) {
-    const { filters, selected, onSelectFilter } = props
+export default function Toolbar({ filters, selected, onSelectFilter }) {
     return (
         <div className="toolbar">
             {filters.map((filter) => {
