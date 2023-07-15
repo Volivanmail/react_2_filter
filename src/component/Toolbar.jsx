@@ -1,4 +1,5 @@
-import React from "react";
+import uniquid from 'uniquid';
+import PropTypes from 'prop-types';
 
 export default function Toolbar({ filters, selected, onSelectFilter }) {
     return (
@@ -6,10 +7,16 @@ export default function Toolbar({ filters, selected, onSelectFilter }) {
             {filters.map((filter) => {
                 return (
                     <div className={filter === selected ? 'toolbar-btn toolbar-btn-current' : 'toolbar-btn'}
-                        onClick={() => onSelectFilter(filter)}>{filter}
+                        onClick={() => onSelectFilter(filter)} key={uniquid()}>{filter}
                     </div>
                 );
             })}
         </div>
     )
+}
+
+Toolbar.propTypes = {
+    filters: PropTypes.array,
+    selected: PropTypes.string,
+    onSelectFilter: PropTypes.func
 }

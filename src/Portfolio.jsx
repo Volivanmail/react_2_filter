@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import ProjectList from "./component/ProjectList";
 import Toolbar from './component/Toolbar';
 import projectsData from './component/data';
